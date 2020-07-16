@@ -1,24 +1,24 @@
-# README
+# <アプリ名>
+attendance
+## サイト概要
+スポーツ団体に所属している生徒が出欠登録を行え、生徒個人及び先生が生徒たちの出欠状況を把握できるサイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### サイトテーマ
+直感的に操作方法が分かり簡単に行えるサイト
 
-Things you may want to cover:
+### テーマを選んだ理由
+小学生から50代まで利用者を想定しているため
 
-* Ruby version
+### ターゲットユーザ
+小学生から50代の男女
 
-* System dependencies
+### 主な利用シーン
+①生徒がレッスン当日に出欠を行う時
+②先生が生徒の出欠状況を把握したい時
+③生徒が自分の出欠状況を把握したい時
 
-* Configuration
+## 設計書
 
-* Database creation
+### 機能一覧
+https://docs.google.com/spreadsheets/d/18x-ZoMBujlanqypIYubhHdUsBSocyapUtOKa1IeoERI/edit#gid=0
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
