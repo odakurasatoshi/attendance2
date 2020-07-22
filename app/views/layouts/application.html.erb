@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <nav class="">
+      <div class="collapse navbar-collapse" id="navbarEexample">
+        <h3 class="text-white">Attendance</h3>
+          <ul class="nav nav-tabs navbar-right">
+            <%= link_to "ログイン（生徒用）", new_student_session_path, class: "glyphicon glyphicon-log-in" %>
+            <%= link_to "新規登録（生徒用）", new_student_registration_path, class: "glyphicon glyphicon-edit" %>
+            <%= link_to "ログイン（先生用）", new_teacher_session_path, class: "glyphicon glyphicon-log-in"%>
+            <%= link_to "新規登録（先生用）", new_teacher_registration_path, class: "glyphicon glyphicon-edit"%>
+          </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
