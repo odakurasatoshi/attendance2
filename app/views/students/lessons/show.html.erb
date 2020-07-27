@@ -1,0 +1,23 @@
+<div class="container">
+	<h3>出席登録画面</h3>
+	<div class="row">
+		<table class="table table-striped">
+			<thead>
+				<th>クラス名</th>
+				<th>ジャンル</th>
+				<th>担当</th>
+			</thead>
+			<tbody>
+					<tr>
+						<td><%= @lesson.area_class.name %></td>
+						<td><%= @lesson.genre.name %></td>
+						<td><%= @lesson.teacher.last_name %></td>
+					</tr>
+			</tbody>
+		</table>
+		<%= form_for @attendee, url: students_attendees_path do |f| %>
+		<%= f.hidden_field :lesson_id, value: @lesson.id %>
+		    <%= f.submit "出席", class: "btn btn-primary"  %>
+    	<% end %>
+	</div>
+</div>

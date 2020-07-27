@@ -2,7 +2,7 @@
 
 class Teachers::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
-      teachers_index_path
+      teachers_lessons_path
   end
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]

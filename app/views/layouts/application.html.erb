@@ -20,9 +20,10 @@
               <%= link_to "ログイン（先生用）", new_teacher_session_path, class: "glyphicon glyphicon-log-in"%>
               <%= link_to "新規登録（先生用）", new_teacher_registration_path, class: "glyphicon glyphicon-edit"%>
               <%= link_to "logout",destroy_teacher_session_path, method: :delete, class: 'glyphicon glyphicon-log-out' %>
-              <%= link_to "レッスン一覧", lessons_path %>
-              <%= link_to "クラス一覧", area_classes_path %>
-              <%= link_to "ジャンル一覧", genres_path %>
+              <%= link_to "レッスン一覧", teachers_lessons_path %>
+              <%= link_to "クラス一覧", teachers_area_classes_path %>
+              <%= link_to "ジャンル一覧", teachers_genres_path %>
+              <%= link_to "コース一覧", teachers_courses_path %>
             </ul>
         </div>
       </header>
@@ -31,7 +32,9 @@
         <div class="header-content">
             <h3 class="text-white">Attendance</h3>
               <ul class="nav nav-tabs navbar-right">
-                <%= link_to "ログイン（生徒用）", new_student_session_path, class: "glyphicon glyphicon-log-in" %>
+                <%= link_to "レッスン一覧",students_lessons_path, class: "" %>
+                <%= link_to "マイページ", class: "" %>
+                <%= link_to "ログアウト（生徒用）",destroy_student_session_path, method: :delete, class: 'glyphicon glyphicon-log-out' %>
               </ul>
         </div>
       </header>

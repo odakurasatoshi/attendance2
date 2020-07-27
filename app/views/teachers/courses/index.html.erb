@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<h1>コース一覧・追加</h1>
+			<%= form_for [:teachers,@course] do |f| %>
+				<%= f.label :コース %>
+				<%= f.text_field :name %>
+				<%= f.submit '追加', class: "btn btn-primary"%>
+			<% end %>
+		<table class="table table-striped">
+			<thead>
+				<th>コース</th>
+			</thead>
+			<tbody>
+				<% @courses.each do |course| %>
+					<tr>
+						<td><%= course.name %></td>
+						<td><%= link_to "削除", teachers_course_path(course.id), method: :delete, data: {confirm: "本当に削除しますか?"},class: "btn btn-danger" %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

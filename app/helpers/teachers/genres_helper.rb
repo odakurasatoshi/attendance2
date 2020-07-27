@@ -1,0 +1,2 @@
+module Teachers::GenresHelper
+end
