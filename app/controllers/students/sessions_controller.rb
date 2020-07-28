@@ -3,7 +3,7 @@
 class Students::SessionsController < Devise::SessionsController
   # ログイン後に遷移するpathを設定
   def after_sign_in_path_for(resource)
-      student_path(resource)
+      students_lessons_path(resource)
   end
 
   # ログアウト後に遷移するpathを設定

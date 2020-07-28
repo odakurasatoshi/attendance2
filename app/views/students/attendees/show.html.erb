@@ -1,2 +1,7 @@
-<h1>Students::Attendees#show</h1>
-<p>Find me in app/views/students/attendees/show.html.erb</p>
+<h1>出席完了しました</h1>
+	<p><%= @attendee.student.last_name %></p>
+	<p><%= @attendee.lesson.teacher.last_name %></p>
+	<p><%= @attendee.lesson.area_class.name %></p>
+	<p><%= @attendee.lesson.genre.name %></p>
+
+

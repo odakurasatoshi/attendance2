@@ -1,17 +1,17 @@
 class Students::AttendeesController < ApplicationController
   def index
-  	@attendees = Attendee.all
-  	@attendee = current_student.attendees.last
   end
 
   def show
+    @attendees = Attendee.all
+    @attendee = current_student.attendees.last
   end
 
   def create
   	@attendee = Attendee.new(attendee_params)
   	@attendee.student_id = current_student.id
   	@attendee.save
-  	redirect_to students_attendees_path
+  	redirect_to students_attendee_path(current_student)
   end
 
   private

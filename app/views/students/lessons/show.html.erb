@@ -16,7 +16,7 @@
 			</tbody>
 		</table>
 		<%= form_for @attendee, url: students_attendees_path do |f| %>
-		<%= f.hidden_field :lesson_id, value: @lesson.id %>
+			<%= f.hidden_field :lesson_id, value: @lesson.id %>
 		    <%= f.submit "出席", class: "btn btn-primary"  %>
     	<% end %>
 	</div>

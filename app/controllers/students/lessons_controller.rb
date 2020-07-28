@@ -4,7 +4,7 @@ class Students::LessonsController < ApplicationController
   end
 
   def show
-  	@student = Student.find(params[:id])
+  	@student = current_student
   	@lesson = Lesson.find(params[:id])
   	@attendee = Attendee.new
   end

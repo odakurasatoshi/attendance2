@@ -33,7 +33,7 @@
             <h3 class="text-white">Attendance</h3>
               <ul class="nav nav-tabs navbar-right">
                 <%= link_to "レッスン一覧",students_lessons_path, class: "" %>
-                <%= link_to "マイページ", class: "" %>
+                <%= link_to "マイページ",student_path(current_student), class: "" %>
                 <%= link_to "ログアウト（生徒用）",destroy_student_session_path, method: :delete, class: 'glyphicon glyphicon-log-out' %>
               </ul>
         </div>
