@@ -24,6 +24,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :コース %>
+    <%= f.collection_select :course_id, Course.all, :id, :name, :include_blank => "選択して下さい" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>

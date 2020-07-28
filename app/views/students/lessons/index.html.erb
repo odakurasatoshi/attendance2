@@ -10,9 +10,9 @@
 			<tbody>
 				<% @lessons.each do |lesson| %>
 					<tr>
-						<td><%= lesson.area_class.name %></td>
-						<td><%= lesson.genre.name %></td>
-						<td><%= lesson.teacher.last_name %></td>
+						<td><%= lesson.area_class&.name %></td>
+						<td><%= lesson.genre&.name %></td>
+						<td><%= lesson.teacher&.last_name %></td>
 						<td><%= link_to "選択する", students_lesson_path(lesson.id) %></td>
 					</tr>
 				<% end %>

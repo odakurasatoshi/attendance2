@@ -1,5 +1,9 @@
 class Students::AttendeesController < ApplicationController
   def index
+    # @attendees = Attendee.all
+    @attendees = current_student.attendees.all
+    # @student = current_student
+    # @attendees = @student.attendees
   end
 
   def show

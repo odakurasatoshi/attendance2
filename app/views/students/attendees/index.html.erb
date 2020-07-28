@@ -1,1 +1,21 @@
-<h1>出席履歴一覧</h1>
+<div class="container">
+	<h1>出席履歴一覧</h1>
+	<div class="row">
+		<table class="table table-striped">
+			<thead>
+				<th>クラス名</th>
+				<th>ジャンル</th>
+				<th>担当</th>
+			</thead>
+			<tbody>
+				<% @attendees.each do |attende| %>
+					<tr>
+						<td><%= attende.lesson.area_class&.name %></td>
+						<td><%= attende.lesson.genre&.name %></td>
+						<td><%= attende.lesson.teacher&.last_name %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

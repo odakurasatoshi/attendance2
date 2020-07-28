@@ -1,7 +1,22 @@
-<h1>出席完了しました</h1>
-	<p><%= @attendee.student.last_name %></p>
-	<p><%= @attendee.lesson.teacher.last_name %></p>
-	<p><%= @attendee.lesson.area_class.name %></p>
-	<p><%= @attendee.lesson.genre.name %></p>
-
+<div class="container">
+	<h1>出席完了しました</h1>
+		<div class="row">
+			<table class="">
+				<thead>
+					<th>出席者名</th>
+					<th>クラス名</th>
+					<th>ジャンル</th>
+					<th>担当</th>
+				</thead>
+				<tbody>
+						<tr>
+							<td><%= @attendee.student.last_name %></td>
+							<td><%= @attendee.lesson.area_class&.name %></td>
+							<td><%= @attendee.lesson.genre&.name %></td>
+							<td><%= @attendee.lesson.teacher&.last_name %></td>
+						</tr>
+				</tbody>
+			</table>
+		</div>
+</div>
 

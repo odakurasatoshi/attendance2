@@ -9,9 +9,9 @@
 			</thead>
 			<tbody>
 					<tr>
-						<td><%= @lesson.area_class.name %></td>
-						<td><%= @lesson.genre.name %></td>
-						<td><%= @lesson.teacher.last_name %></td>
+						<td><%= @lesson.area_class&.name %></td>
+						<td><%= @lesson.genre&.name %></td>
+						<td><%= @lesson.teacher&.last_name %></td>
 					</tr>
 			</tbody>
 		</table>
