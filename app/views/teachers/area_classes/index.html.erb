@@ -14,7 +14,7 @@
 				<% @area_classes.each do |aclass| %>
 					<tr>
 						<td><%= aclass.name %></td>
-						<td><%= link_to "削除", teachers_area_class_path(aclass.id), method: :delete, data: {confirm: "本当に削除しますか?"},class: "btn btn-danger" %></td>
+						<td><%= link_to "編集", edit_teachers_area_class_path(aclass.id) %></td>
 					</tr>
 				<% end %>
 			</tbody>

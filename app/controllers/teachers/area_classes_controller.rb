@@ -10,11 +10,21 @@ class Teachers::AreaClassesController < ApplicationController
   	redirect_to teachers_area_classes_path
   end
 
-  def destroy
-  	@area_class = AreaClass.find(params[:id])
-  	@area_class.destroy
-  	redirect_to teachers_area_classes_path
+  def edit
+    @area_class = AreaClass.find(params[:id])
   end
+
+  def update
+    @area_class = AreaClass.find(params[:id])
+    @area_class.update(area_class_params)
+    redirect_to teachers_area_classes_path
+  end
+
+  # def destroy
+  	# @area_class = AreaClass.find(params[:id])
+  	# @area_class.destroy
+  	# redirect_to teachers_area_classes_path
+  # end
 
   private
 

@@ -75,3 +75,8 @@ gem 'kaminari','~> 1.2.1'
 
 #デバック
 gem 'pry-byebug'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

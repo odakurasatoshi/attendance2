@@ -17,6 +17,12 @@ class Teachers::LessonsController < ApplicationController
   	@lesson = Lesson.find(params[:id])
   end
 
+  def update
+    @lesson = Lesson.find(params[:id])
+    @lesson.update(lesson_params)
+    redirect_to teachers_lessons_path
+  end
+
   private
   def lesson_params
       params.require(:lesson).permit(:area_class_id, :genre_id, :teacher_id)

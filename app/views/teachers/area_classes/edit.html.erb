@@ -1,0 +1,10 @@
+<div class="container">
+	<div class="row">
+		<h1>クラス編集</h1>
+			<%= form_for [:teachers,@area_class] do |f| %>
+				<%= f.label :クラス %>
+				<%= f.text_field :name %>
+				<%= f.submit '変更を保存する', class: "btn btn-primary"%>
+			<% end %>
+	</div>
+</div>

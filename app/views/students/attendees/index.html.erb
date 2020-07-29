@@ -6,6 +6,7 @@
 				<th>クラス名</th>
 				<th>ジャンル</th>
 				<th>担当</th>
+				<th>コース</th>
 			</thead>
 			<tbody>
 				<% @attendees.each do |attende| %>
@@ -13,6 +14,7 @@
 						<td><%= attende.lesson.area_class&.name %></td>
 						<td><%= attende.lesson.genre&.name %></td>
 						<td><%= attende.lesson.teacher&.last_name %></td>
+						<td><%= attende.student.course&.name %></td>
 					</tr>
 				<% end %>
 			</tbody>

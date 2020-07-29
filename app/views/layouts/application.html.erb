@@ -33,6 +33,7 @@
         <div class="header-content">
             <h3 class="text-white">Attendance</h3>
               <p class="text-center">ようこそ<%= current_student.last_name %>さん</p>
+              <p class="text-center">現在の選択コース:<%= current_student.course.name %></p>
               <p class="text-center">出席数:<%= current_student.attendees.all.count %></p>
                 <ul class="nav nav-tabs navbar-right">
                   <%= link_to "レッスン一覧",students_lessons_path, class: "" %>

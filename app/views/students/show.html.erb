@@ -14,6 +14,10 @@
 						<th>メールアドレス</th>
 						<td><%= @student.email %></td>
 					</tr>
+					<tr>
+						<th>コース</th>
+						<td><%= @student.course.name %></td>
+					</tr>
 			</table>
 
 			<%= link_to "編集する",  edit_student_path(@student.id), class: "btn btn-primary" %>

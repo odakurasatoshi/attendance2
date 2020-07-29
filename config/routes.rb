@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   get 'teachers/index'
 
   namespace :teachers do
-    resources :lessons, only: [:index, :new, :edit, :create]
-    resources :area_classes, only: [:index, :create, :destroy]
-    resources :genres, only: [:index, :create, :destroy]
-    resources :courses, only: [:index, :create, :destroy]
+    resources :lessons, only: [:index, :new, :edit, :create, :update]
+    resources :area_classes, only: [:index, :create, :edit, :update, :destroy]
+    resources :genres, only: [:index, :create, :edit, :update, :destroy]
+    resources :courses, only: [:index, :create, :edit, :update, :destroy]
   end
 
   devise_for :students, controllers: {
