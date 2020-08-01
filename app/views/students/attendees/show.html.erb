@@ -2,19 +2,30 @@
 	<h1>出席完了しました</h1>
 		<div class="row">
 			<table class="">
-				<thead>
+				<tr>
+					<th>出席日</th>
+					<td><%= @attendee&.attendance_date %></td>
+				</tr>
+				<tr>
 					<th>出席者名</th>
+					<td><%= @attendee.student.last_name %></td>
+				</tr>
+				<tr>
 					<th>クラス名</th>
+					<td><%= @attendee.lesson.area_class&.name %></td>
+				</tr>
+				<tr>
 					<th>ジャンル</th>
+					<td><%= @attendee.lesson.genre&.name %></td>
+				</tr>
+				<tr>
+					<th>時間帯</th>
+					<td><%= @attendee.lesson.time_class&.time_zone %></td>
+				</tr>
+				<tr>
 					<th>担当</th>
-				</thead>
-				<tbody>
-						<tr>
-							<td><%= @attendee.student.last_name %></td>
-							<td><%= @attendee.lesson.area_class&.name %></td>
-							<td><%= @attendee.lesson.genre&.name %></td>
-							<td><%= @attendee.lesson.teacher&.last_name %></td>
-						</tr>
+					<td><%= @attendee.lesson.teacher&.last_name %></td>
+				</tr>
 				</tbody>
 			</table>
 		</div>

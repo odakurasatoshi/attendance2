@@ -16,15 +16,14 @@
           <h3 class="text-white">Attendance</h3>
             <p class="text-center">ようこそ<%= current_teacher.last_name %>先生</p>
               <ul class="nav nav-tabs navbar-right">
-                <%= link_to "ログイン（生徒用）", new_student_session_path, class: "glyphicon glyphicon-log-in" %>
-                <%= link_to "新規登録（生徒用）", new_student_registration_path, class: "glyphicon glyphicon-edit" %>
-                <%= link_to "ログイン（先生用）", new_teacher_session_path, class: "glyphicon glyphicon-log-in"%>
-                <%= link_to "新規登録（先生用）", new_teacher_registration_path, class: "glyphicon glyphicon-edit"%>
-                <%= link_to "logout",destroy_teacher_session_path, method: :delete, class: 'glyphicon glyphicon-log-out' %>
+                <%= link_to "出席者一覧", teachers_attendees_path %>
                 <%= link_to "レッスン一覧", teachers_lessons_path %>
                 <%= link_to "クラス一覧", teachers_area_classes_path %>
                 <%= link_to "ジャンル一覧", teachers_genres_path %>
                 <%= link_to "コース一覧", teachers_courses_path %>
+                <%= link_to "時間帯一覧", teachers_time_classes_path %>
+                <%= link_to "生徒一覧", teachers_students_path %>
+                <%= link_to "logout",destroy_teacher_session_path, method: :delete, class: 'glyphicon glyphicon-log-out' %>
               </ul>
         </div>
       </header>

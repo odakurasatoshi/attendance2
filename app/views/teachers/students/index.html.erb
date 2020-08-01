@@ -1,0 +1,32 @@
+<div class="container">
+	<h1>生徒一覧</h1>
+		<%= form_tag(teachers_students_search_path,:method => 'get') do %>
+  			<%= text_field_tag :search, "",placeholder:"検索ワード" %>
+			<%= submit_tag '検索', :name => nil %>
+		<% end %>
+	<div class="row">
+		<table class="table table-striped">
+			<thead>
+				<th>生徒ID</th>
+				<th>氏名</th>
+				<th>メールアドレス</th>
+				<th>選択コース</th>
+				<th>ステータス</th>
+				<th>担当</th>
+			</thead>
+			<tbody>
+				<% @students.each do |student| %>
+					<tr>
+						<td><%= link_to student.id, teachers_student_path(student.id) %></td>
+						<td><%= student&.last_name %><%= student&.first_name %></td>
+						<td><%= student&.email %></td>
+						<td><%= student.course&.name %></td>
+						<td><%#= @students. %></td>
+						<td><%#= @students. %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+

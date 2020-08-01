@@ -5,4 +5,11 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :course
   has_many :attendees
+  def self.search(search)
+      if search
+        Student.where(['content LIKE ?', "%#{search}%"])
+      else
+        Student.all
+      end
+  end
 end

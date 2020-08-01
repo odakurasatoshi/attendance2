@@ -3,15 +3,19 @@
 	<div class="row">
 		<table class="table table-striped">
 			<thead>
+				<th>画像</th>
 				<th>クラス名</th>
 				<th>ジャンル</th>
+				<th>時間帯</th>
 				<th>担当</th>
 			</thead>
 			<tbody>
 				<% @lessons.each do |lesson| %>
 					<tr>
+						<td><%= attachment_image_tag lesson, :image, format: 'jpeg', size: "100x100" %></td>
 						<td><%= lesson.area_class&.name %></td>
 						<td><%= lesson.genre&.name %></td>
+						<td><%= lesson.time_class&.time_zone %></td>
 						<td><%= lesson.teacher&.last_name %></td>
 						<td><%= link_to "選択する", students_lesson_path(lesson.id) %></td>
 					</tr>

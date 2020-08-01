@@ -4,21 +4,17 @@
 		<table class="table table-striped">
 			<thead>
 				<th>出席日</th>
-				<th>クラス名</th>
-				<th>ジャンル</th>
-				<th>担当</th>
-				<th>時間帯</th>
-				<th>コース</th>
+				<th>出席者名</th>
+				<th>選択コース</th>
+				<th>出席回数</th>
 			</thead>
 			<tbody>
 				<% @attendees.each do |attende| %>
 					<tr>
 						<td><%= attende&.attendance_date %></td>
-						<td><%= attende.lesson.area_class&.name %></td>
-						<td><%= attende.lesson.genre&.name %></td>
-						<td><%= attende.lesson.time_class&.time_zone %></td>
-						<td><%= attende.lesson.teacher&.last_name %></td>
+						<td><%= attende.student&.last_name %><%= attende.student&.first_name %></td>
 						<td><%= attende.student.course&.name %></td>
+						<td><%#= @students.attende.count %></td>
 					</tr>
 				<% end %>
 			</tbody>

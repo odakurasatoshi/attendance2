@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<h1>レッスン時間一覧・追加</h1>
+			<%= form_for [:teachers,@time_class] do |f| %>
+				<%= f.label :時間帯 %>
+				<%= f.text_field :time_zone %>
+				<%= f.submit '追加', class: "btn btn-primary"%>
+			<% end %>
+		<table class="table table-striped">
+			<thead>
+				<th>クラス</th>
+			</thead>
+			<tbody>
+				<% @time_classes.each do |tclass| %>
+					<tr>
+						<td><%= tclass.time_zone %></td>
+						<td><%= link_to "編集", edit_teachers_time_class_path(tclass.id) %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+
