@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
 
   def show
   	@student = current_student
+    @attendees = @student.attendees
   end
 
   def edit
@@ -13,6 +14,10 @@ class StudentsController < ApplicationController
   	@student.update(student_params)
   	redirect_to student_path
   end
+
+  # def start_time
+    # self.attendance_date
+  # end
 
   private
   def student_params

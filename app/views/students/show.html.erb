@@ -22,5 +22,17 @@
 
 			<%= link_to "編集する",  edit_student_path(@student.id), class: "btn btn-primary" %>
 			<%= link_to "出席履歴一覧", students_attendees_path, class: "btn btn-primary" %>
+		<h1>出席カレンダー</h1>
+
+			<%= month_calendar events: @attendees do |date,attendees| %>
+				<%= date.day %>
+				<% attendees.each do |attendee| %>
+				<div>
+					<%= attendee.attendance_date %>
+				</div>
+				<% end %>
+			<% end %>
+
+
 	</div>
 </div>
