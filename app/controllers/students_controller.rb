@@ -15,10 +15,6 @@ class StudentsController < ApplicationController
   	redirect_to student_path
   end
 
-  # def start_time
-    # self.attendance_date
-  # end
-
   private
   def student_params
   	params.require(:student).permit(:last_name, :first_name, :sub_last_name, :sub_first_name, :email)

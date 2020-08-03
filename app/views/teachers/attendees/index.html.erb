@@ -10,7 +10,6 @@
 			</thead>
 			<tbody>
 				<% @attendees.each do |attende| %>
-					<
 					<tr>
 						<td><%= attende&.attendance_date %></td>
 						<td><%= attende.student&.last_name %><%= attende.student&.first_name %></td>
