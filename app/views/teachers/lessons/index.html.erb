@@ -18,7 +18,8 @@
 						<td><%= lesson.genre&.name %></td>
 						<td><%= lesson.time_class&.time_zone %></td>
 						<td><%= lesson.teacher&.last_name %></td>
-						<td><%= link_to "編集する", edit_teachers_lesson_path(lesson.id) %></td>
+						<td><%= link_to "編集する", edit_teachers_lesson_path(lesson.id), class: "btn btn-primary"%></td>
+						<td><%= link_to "休講情報入力", teachers_lesson_path(lesson.id), class: "btn btn-danger" %></td>
 					</tr>
 				<% end %>
 			</tbody>

@@ -5,20 +5,19 @@ Rails.application.routes.draw do
     passwords: 'teachers/passwords',
     registrations: 'teachers/registrations'
   }
-  namespace :teachers do
-    resources :attendees, only: [:index, :show]
-    resources :students, only: [:index, :show, :edit, :update]
-    get 'students/search/' => 'students#search',as: 'students_search'
-  end
-  get 'teachers/index'
 
   namespace :teachers do
-    resources :lessons, only: [:index, :new, :edit, :create, :update]
+    resources :lessons, only: [:index, :new, :show, :edit, :create, :update]
     resources :area_classes, only: [:index, :create, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :edit, :update, :destroy]
     resources :courses, only: [:index, :create, :edit, :update, :destroy]
     resources :time_classes, only: [:index, :create, :edit, :update, :destroy]
+    resources :attendees, only: [:index, :show]
+    resources :students, only: [:index, :show, :edit, :update]
+    resources :no_lessons, only: [:index, :show, :create, :destroy]
+    get 'students/search/' => 'students#search',as: 'students_search'
   end
+  get 'teachers/index'
 
   devise_for :students, controllers: {
   	sessions: 'students/sessions',

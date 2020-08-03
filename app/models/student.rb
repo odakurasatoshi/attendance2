@@ -4,7 +4,7 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :course
-  has_many :attendees
+  has_many :attendees, dependent: :destroy
   def self.search(search)
       if search
         Student.where(['content LIKE ?', "%#{search}%"])

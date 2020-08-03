@@ -1,0 +1,26 @@
+<div class="container">
+	<h1>休講一覧</h1>
+	<div class="row">
+		<table class="table table-striped">
+			<thead>
+				<th>休講日</th>
+				<th>クラス名</th>
+				<th>ジャンル</th>
+				<th>時間帯</th>
+				<th>担当</th>
+			</thead>
+			<tbody>
+				<% @no_lessons.each do |rest| %>
+					<tr>
+						<td><%= rest&.no_lesson_date %></td>
+						<td><%= rest.lesson.area_class&.name %></td>
+						<td><%= rest.lesson.genre&.name %></td>
+						<td><%= rest.lesson.time_class&.time_zone %></td>
+						<td><%= rest.lesson.teacher&.last_name %></td>
+						<td><%= link_to "削除する",  teachers_no_lesson_path(rest.id), method: :delete, data: {confirm: "本当に削除しますか?"}, class: "btn btn-danger" %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

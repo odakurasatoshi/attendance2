@@ -13,6 +13,11 @@ class Teachers::LessonsController < ApplicationController
   	@lessons = Lesson.all
   end
 
+  def show
+    @lesson = Lesson.find(params[:id])
+    @no_lesson = NoLesson.new
+  end
+
   def edit
   	@lesson = Lesson.find(params[:id])
   end
