@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
        flash[:notice] = "編集内容が保存されました."
   	   redirect_to student_path
     else
-       render :show
+       render :edit
     end
   end
 

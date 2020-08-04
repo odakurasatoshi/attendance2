@@ -14,9 +14,9 @@ class Teachers::StudentsController < ApplicationController
     @students = Student.search(id: params[:search])
   end
 
-  # def edit
-  	# @student = Student.find_by(params[:id])
-  # end
+  def edit
+  	@student = Student.find_by(params[:id])
+  end
 
   # def update
     # @student = Student.find(params[:id])
