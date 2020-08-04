@@ -1,4 +1,6 @@
 class Teachers::NoLessonsController < ApplicationController
+  before_action :authenticate_teacher!
+
   def index
   	@no_lessons = NoLesson.all.order(created_at: :desc)
   end

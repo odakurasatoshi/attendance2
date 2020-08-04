@@ -5,8 +5,11 @@ class Teachers::LessonsController < ApplicationController
 
   def create
   	@lesson = Lesson.new(lesson_params)
-  	@lesson.save
-  	redirect_to teachers_lessons_path
+  	if @lesson.save
+  	   redirect_to teachers_lessons_path
+    else
+       render :new
+    end
   end
 
   def index
@@ -24,8 +27,12 @@ class Teachers::LessonsController < ApplicationController
 
   def update
     @lesson = Lesson.find(params[:id])
-    @lesson.update(lesson_params)
-    redirect_to teachers_lessons_path
+    if @lesson.update(lesson_params)
+       flash[:notice] = "レッスン情報更新完了"
+       redirect_to teachers_lessons_path
+    else
+       render :edit
+    end
   end
 
   private

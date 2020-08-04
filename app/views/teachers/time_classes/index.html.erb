@@ -2,6 +2,14 @@
 	<div class="row">
 		<h1>レッスン時間一覧・追加</h1>
 			<%= form_for [:teachers,@time_class] do |f| %>
+				<% if @time_class.errors.any? %>
+					<h3 class="message-error"><%= @time_class.errors.count %> errors prohibited this 時間帯 from being saved:</h3>
+						<ul>
+							<% @time_class.errors.full_messages.each do |message| %>
+								<li><%= message %></li>
+							<% end %>
+						</ul>
+				<% end %>
 				<%= f.label :時間帯 %>
 				<%= f.text_field :time_zone %>
 				<%= f.submit '追加', class: "btn btn-primary"%>

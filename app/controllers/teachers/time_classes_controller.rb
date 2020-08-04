@@ -1,4 +1,6 @@
 class Teachers::TimeClassesController < ApplicationController
+  before_action :authenticate_teacher!
+
   def index
   	@time_class = TimeClass.new
   	@time_classes = TimeClass.all
@@ -6,8 +8,12 @@ class Teachers::TimeClassesController < ApplicationController
 
   def create
   	@time_class = TimeClass.new(time_class_params)
-  	@time_class.save
-  	redirect_to teachers_time_classes_path
+    @time_classes = TimeClass.all
+  	if @time_class.save
+  	   redirect_to teachers_time_classes_path
+    else
+       render :index
+    end
   end
 
   def edit
@@ -16,8 +22,11 @@ class Teachers::TimeClassesController < ApplicationController
 
   def update
     @time_class = TimeClass.find(params[:id])
-    @time_class.update(time_class_params)
-    redirect_to teachers_time_classes_path
+    if @time_class.update(time_class_params)
+       redirect_to teachers_time_classes_path
+    else
+       render :edit
+    end
   end
 
   # def destroy

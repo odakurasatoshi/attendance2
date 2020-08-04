@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_student!
 
   def show
   	@student = current_student
@@ -11,8 +12,13 @@ class StudentsController < ApplicationController
 
   def update
   	@student = current_student
-  	@student.update(student_params)
-  	redirect_to student_path
+    @attendees = @student.attendees
+  	if @student.update(student_params)
+       flash[:notice] = "編集内容が保存されました."
+  	   redirect_to student_path
+    else
+       render :show
+    end
   end
 
   private

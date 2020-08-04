@@ -1,6 +1,9 @@
 <div class="container">
 	<h3>レッスン一覧</h3>
 	<%= link_to "レッスン作成", new_teachers_lesson_path %>
+	<% if flash[:notice] %>
+  		<p><%= flash[:notice] %></p>
+	<% end %>
 	<div class="row">
 		<table class="table table-striped">
 			<thead>

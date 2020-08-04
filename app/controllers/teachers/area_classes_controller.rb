@@ -1,4 +1,6 @@
 class Teachers::AreaClassesController < ApplicationController
+  before_action :authenticate_teacher!
+
   def index
   	@area_class = AreaClass.new
   	@area_classes = AreaClass.all
@@ -6,8 +8,12 @@ class Teachers::AreaClassesController < ApplicationController
 
   def create
   	@area_class = AreaClass.new(area_class_params)
-  	@area_class.save
-  	redirect_to teachers_area_classes_path
+    @area_classes = AreaClass.all
+  	if @area_class.save
+  	   redirect_to teachers_area_classes_path
+    else
+       render :index
+    end
   end
 
   def edit
@@ -16,8 +22,11 @@ class Teachers::AreaClassesController < ApplicationController
 
   def update
     @area_class = AreaClass.find(params[:id])
-    @area_class.update(area_class_params)
-    redirect_to teachers_area_classes_path
+    if @area_class.update(area_class_params)
+       redirect_to teachers_area_classes_path
+    else
+       render :edit
+    end
   end
 
   # def destroy

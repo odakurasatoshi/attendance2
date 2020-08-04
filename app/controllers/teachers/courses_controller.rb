@@ -1,4 +1,6 @@
 class Teachers::CoursesController < ApplicationController
+  before_action :authenticate_teacher!
+
   def index
   	@course = Course.new
   	@courses = Course.all
@@ -6,8 +8,12 @@ class Teachers::CoursesController < ApplicationController
 
   def create
   	@course = Course.new(course_params)
-  	@course.save
-  	redirect_to teachers_courses_path
+    @courses = Course.all
+  	if @course.save
+  	   redirect_to teachers_courses_path
+    else
+       render :index
+    end
   end
 
   def edit
@@ -16,8 +22,11 @@ class Teachers::CoursesController < ApplicationController
 
   def update
     @course = Course.find(params[:id])
-    @course.update(course_params)
-    redirect_to teachers_courses_path
+    if @course.update(course_params)
+       redirect_to teachers_courses_path
+    else
+       render :edit
+    end
   end
 
   # def destroy

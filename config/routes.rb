@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+   root 'students/lessons#index'
    devise_for :teachers, controllers: {
     sessions: 'teachers/sessions',
     passwords: 'teachers/passwords',
