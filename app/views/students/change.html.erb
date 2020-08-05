@@ -1,0 +1,61 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-7">
+			<h1>コース変更依頼</h1>
+				<%= form_for @student do |f| %>
+					<p>現在のコース</p>
+						<%= @student.course.name %>
+					<p>変更後のコース</p>
+						<%= f.collection_select :course_id, Course.all, :id, :name, :include_blank => "選択して下さい" %><br>
+					<%= f.submit '変更依頼を送信', class: "btn btn-primary"%>
+					<p>※コース変更は翌月1日から適用されます。</p>
+				<% end %>
+		</div>
+		<div class="col-md-5">
+			<h3>料金表</h3>
+			<table class="table table-striped">
+				<thead>
+					<th>コース</th>
+					<th>料金</th>
+					<th>1レッスン単価</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>単発</td>
+						<td>2000円<br>(高校生以下1,500円)</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>月2回コース</td>
+						<td>4,000円</td>
+						<td>(2,000円)</td>
+					</tr>
+						<td>月4回コース</td>
+						<td>6,800円</td>
+						<td>(1,700円)</td>
+					<tr>
+						<td>月6回コース</td>
+						<td>9,800円</td>
+						<td>(1,633円)</td>
+					</tr>
+					<tr>
+						<td>通い放題</td>
+						<td>12,000円</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>子ども月4回コース</td>
+						<td>4,000円</td>
+						<td>(1,000円)</td>
+					</tr>
+					<tr>
+						<td>子ども通い放題</td>
+						<td>7,000円</td>
+						<td></td>
+					</tr>
+				</tbody>
+		</table>
+		</div>
+	</div>
+</div>
+

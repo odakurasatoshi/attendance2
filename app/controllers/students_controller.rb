@@ -21,8 +21,13 @@ class StudentsController < ApplicationController
     end
   end
 
+  def change
+    @student = current_student
+  end
+
+
   private
   def student_params
-  	params.require(:student).permit(:last_name, :first_name, :sub_last_name, :sub_first_name, :email)
+  	params.require(:student).permit(:last_name, :first_name, :sub_last_name, :sub_first_name, :email, :course_id)
   end
 end
