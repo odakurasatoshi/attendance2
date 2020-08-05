@@ -21,10 +21,18 @@ class StudentsController < ApplicationController
     end
   end
 
+  # コース変更依頼画面へ遷移
   def change
     @student = current_student
   end
 
+  # コース変更依頼をActionMailerで送信
+  def create
+    raise
+    @student = current_student
+    ChangeMailer.send_change(student).deliver
+    students_change_path(current_student)
+  end
 
   private
   def student_params

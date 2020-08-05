@@ -30,7 +30,7 @@ Rails.application.routes.draw do
       resources :lessons, only: [:index, :show]
       resources :attendees, only: [:index, :show, :create]
   end
-  resources :students, only: [:show, :edit, :update]
+  resources :students, only: [:show, :edit, :update, :create]
   get 'students/change/:id' => 'students#change',as: 'students_change'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,18 +1,19 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-7">
-			<h1>コース変更依頼</h1>
-				<%= form_for @student do |f| %>
-					<p>現在のコース</p>
-						<%= @student.course.name %>
-					<p>変更後のコース</p>
-						<%= f.collection_select :course_id, Course.all, :id, :name, :include_blank => "選択して下さい" %><br>
+		<div class="col-xs-5">
+			<h2>コース変更依頼</h2>
+			<!-- , url: students_path -->
+				<%= form_for @student, url: {action: 'create'} do |f| %>
+					<p class="h5">現在のコース:</p>
+					<p class="h3"><%= @student.course.name %></p>
+					<p class="h5">変更後のコース:</p>
+					<p class="h3"><%= f.collection_select :course_id, Course.all, :id, :name, :include_blank => "選択して下さい" %></p><br>
 					<%= f.submit '変更依頼を送信', class: "btn btn-primary"%>
 					<p>※コース変更は翌月1日から適用されます。</p>
 				<% end %>
 		</div>
-		<div class="col-md-5">
-			<h3>料金表</h3>
+		<div class="col-xs-5">
+			<h4>料金表</h4>
 			<table class="table table-striped">
 				<thead>
 					<th>コース</th>

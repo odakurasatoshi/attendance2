@@ -13,48 +13,70 @@
     <% if teacher_signed_in? %>
       <header class="teacher_header">
         <div class="header-content">
-          <%= image_tag 'capo.png', :size => '200x70' %>
-          <h3 class="">出席登録サイト</h3>
-            <p class="text-center">ようこそ<%= current_teacher.last_name %>先生</p>
-              <ul class="nav nav-tabs navbar-right">
-                <%= link_to "出席者一覧", teachers_attendees_path %>
-                <%= link_to "レッスン一覧", teachers_lessons_path %>
-                <%= link_to "休講一覧",teachers_no_lessons_path %>
-                <%= link_to "クラス一覧", teachers_area_classes_path %>
-                <%= link_to "ジャンル一覧", teachers_genres_path %>
-                <%= link_to "コース一覧", teachers_courses_path %>
-                <%= link_to "時間帯一覧", teachers_time_classes_path %>
-                <%= link_to "生徒一覧", teachers_students_path %>
-                <%= link_to "ログアウト",destroy_teacher_session_path, method: :delete  %>
-              </ul>
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-3">
+                <%= image_tag 'capo.png', :size => '200x70' %>
+                <h3 class="">出席登録サイト</h3>
+              </div>
+               <div class="col-xs-4">
+                <p class="text-center">ようこそ<%= current_teacher.last_name %>先生</p>
+               </div>
+                  <ul class="nav nav-tabs navbar-right">
+                    <%= link_to "出席者一覧", teachers_attendees_path %>
+                    <%= link_to "レッスン一覧", teachers_lessons_path %>
+                    <%= link_to "休講一覧",teachers_no_lessons_path %>
+                    <%= link_to "クラス一覧", teachers_area_classes_path %>
+                    <%= link_to "ジャンル一覧", teachers_genres_path %>
+                    <%= link_to "コース一覧", teachers_courses_path %>
+                    <%= link_to "時間帯一覧", teachers_time_classes_path %>
+                    <%= link_to "生徒一覧", teachers_students_path %>
+                    <%= link_to "ログアウト",destroy_teacher_session_path, method: :delete  %>
+                  </ul>
+            </div>
+          </div>
         </div>
       </header>
     <% elsif student_signed_in? %>
       <header class="student_header">
         <div class="header-content">
-            <%= image_tag 'capo.png', :size => '200x70' %>
-            <h3 class="">出席登録サイト</h3>
-              <p class="text-center">ようこそ<%= current_student.last_name %>さん</p>
-              <p class="text-center">現在の選択コース:<%= current_student.course.name %></p>
-              <p class="text-center">出席数:<%= current_student.attendees.all.count %></p>
-                <ul class="nav nav-tabs navbar-right">
-                  <%= link_to "レッスン一覧",students_lessons_path %>
-                  <%= link_to "マイページ",student_path(current_student), class: "" %>
-                  <%= link_to "ログアウト",destroy_student_session_path, method: :delete %>
-                </ul>
+           <div class="container">
+            <div class="row">
+              <div class="col-xs-4">
+                <%= image_tag 'capo.png', :size => '200x70' %>
+                <h3 class="">出席登録サイト</h3>
+              </div>
+                <div class="col-xs-6">
+                  <p class="text-center">ようこそ<%= current_student.last_name %>さん</p>
+                  <p class="text-center">現在の選択コース:<%= current_student.course.name %></p>
+                  <p class="text-center">出席数:<%= current_student.attendees.all.count %></p>
+                </div>
+                    <ul class="nav nav-tabs navbar-right">
+                      <%= link_to "レッスン一覧",students_lessons_path %>
+                      <%= link_to "マイページ",student_path(current_student), class: "" %>
+                      <%= link_to "ログアウト",destroy_student_session_path, method: :delete %>
+                    </ul>
+            </div>
+          </div>
         </div>
       </header>
     <% else %>
       <header class="top_header">
         <div class="header-content">
-          <%= image_tag 'capo.png', :size => '200x70' %>
-          <h3 class="">出席登録サイト</h3>
-            <ul class="nav nav-tabs navbar-right" style="background-color:#e3f2fd;" >
-              <%= link_to "ログイン（生徒用）", new_student_session_path %>
-              <%= link_to "新規登録（生徒用）", new_student_registration_path %>
-              <%= link_to "ログイン（先生用）", new_teacher_session_path %>
-              <%= link_to "新規登録（先生用）", new_teacher_registration_path %>
-            </ul>
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-3">
+                <%= image_tag 'capo.png', :size => '200x70' %>
+                <h3 class="">出席登録サイト</h3>
+              </div>
+                <ul class="nav nav-tabs navbar-right" style="background-color:#e3f2fd;" >
+                  <%= link_to "ログイン（生徒用）", new_student_session_path %>
+                  <%= link_to "新規登録（生徒用）", new_student_registration_path %>
+                  <%= link_to "ログイン（先生用）", new_teacher_session_path %>
+                  <%= link_to "新規登録（先生用）", new_teacher_registration_path %>
+                </ul>
+            </div>
+          </div>
         </div>
       </header>
     <% end %>
