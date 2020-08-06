@@ -4,4 +4,20 @@ class Teachers::AttendeesController < ApplicationController
   def index
   	@attendees = Attendee.where('created_at>?', 1.day.ago)
   end
+
+  def show
+  	@attendee = Attendee.find_by(params[:id])
+  end
+
+  def update
+  	@attendee = Attendee.find_by(params[:id])
+  	@attendee.update(attendee_params)
+  	redirect_to teachers_attendees_path
+  end
+
+  private
+
+  def attendee_params
+    params.require(:attendee).permit(:attendance_status)
+  end
 end

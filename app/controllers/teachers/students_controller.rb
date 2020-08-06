@@ -15,17 +15,17 @@ class Teachers::StudentsController < ApplicationController
   end
 
   def edit
-  	@student = Student.find_by(params[:id])
+  	@student = Student.find_by(id: params[:id])
   end
 
-  # def update
-    # @student = Student.find(params[:id])
-    # @student.update(student_params)
-    # redirect_to teachers_students_path
-  # end
+  def update
+    @student = Student.find(params[:id])
+    @student.update(student_params)
+    redirect_to teachers_students_path
+  end
 
-  # private
-  # def student_params
-  	# params.require(:student).permit(:last_name, :first_name, :sub_last_name, :sub_first_name, :email)
-  # end
+  private
+  def student_params
+  	params.require(:student).permit(:teacher_id, :course_id)
+  end
 end

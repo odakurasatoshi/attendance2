@@ -4,7 +4,9 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :course
+  belongs_to :teacher
   has_many :attendees, dependent: :destroy
+
 
   validates :last_name, presence: true
   validates :sub_last_name, presence: true

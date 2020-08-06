@@ -22,7 +22,7 @@
 						<td><%= student&.email %></td>
 						<td><%= student.course&.name %></td>
 						<td><%#= @students. %></td>
-						<td><%#= @students. %></td>
+						<td><%= student.teacher&.last_name %></td>
 					</tr>
 				<% end %>
 			</tbody>

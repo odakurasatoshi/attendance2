@@ -7,14 +7,16 @@
 				<th>出席者名</th>
 				<th>選択コース</th>
 				<th>出席回数</th>
+				<th>出席ステータス</th>
 			</thead>
 			<tbody>
 				<% @attendees.each do |attende| %>
 						<tr>
 							<td><%= attende&.attendance_date %></td>
-							<td><%= attende.student&.last_name %><%= attende.student&.first_name %></td>
+							<td><%=link_to attende.student&.last_name, teachers_attendee_path(attende.student_id) %></td>
 							<td><%= attende.student.course&.name %></td>
 							<td><%= attende.student.attendees.count %></td>
+							<td><%= attende.attendance_status %></td>
 						</tr>
 				<% end %>
 			</tbody>

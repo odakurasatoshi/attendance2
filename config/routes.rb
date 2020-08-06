@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update, :destroy]
     resources :courses, only: [:index, :create, :edit, :update, :destroy]
     resources :time_classes, only: [:index, :create, :edit, :update, :destroy]
-    resources :attendees, only: [:index, :show]
+    resources :attendees, only: [:index, :show, :update]
     resources :students, only: [:index, :show, :edit, :update]
     resources :no_lessons, only: [:index, :show, :create, :destroy]
     get 'students/search/' => 'students#search',as: 'students_search'

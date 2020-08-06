@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_042410) do
+ActiveRecord::Schema.define(version: 2020_08_06_080248) do
 
   create_table "area_classes", force: :cascade do |t|
     t.string "name", null: false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_08_03_042410) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "attendance_date"
+    t.integer "attendance_status", default: 0
   end
 
   create_table "courses", force: :cascade do |t|
@@ -68,6 +69,8 @@ ActiveRecord::Schema.define(version: 2020_08_03_042410) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "course_id"
+    t.integer "teacher_id"
+    t.boolean "is_active", default: true
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end

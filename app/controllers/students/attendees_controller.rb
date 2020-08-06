@@ -23,6 +23,6 @@ class Students::AttendeesController < ApplicationController
   private
 
   def attendee_params
-    params.require(:attendee).permit(:student_id, :lesson_id, :attendance_date)
+    params.require(:attendee).permit(:student_id, :lesson_id, :attendance_date, :attendance_status)
   end
 end
