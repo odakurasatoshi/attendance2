@@ -6,11 +6,11 @@ class Teachers::AttendeesController < ApplicationController
   end
 
   def show
-  	@attendee = Attendee.find_by(params[:id])
+  	@attendee = Attendee.find_by(student_id: params[:id])
   end
 
   def update
-  	@attendee = Attendee.find_by(params[:id])
+  	@attendee = Attendee.find_by(student_id: params[:id])
   	@attendee.update(attendee_params)
   	redirect_to teachers_attendees_path
   end

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
 		<h2>出席承認画面</h2>
-		<%= form_for [:teachers,@attendee] do |f| %>
+		<%= form_for [:teachers, @attendee] do |f| %>
 			<%= @attendee&.attendance_date %>
 			<p><%= @attendee.student&.last_name %><%= @attendee.student&.first_name %></p>
 			<p><%= @attendee.student.course&.name %></p>

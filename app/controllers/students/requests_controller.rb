@@ -8,7 +8,6 @@ class Students::RequestsController < ApplicationController
 
   # コース変更依頼をActionMailerで送信
   def create
-    raise
     @student = current_student
     ChangeMailer.send_change(student).deliver
     redirect_to students_request_path(current_student)
