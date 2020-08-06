@@ -2,8 +2,7 @@
 	<div class="row">
 		<div class="col-xs-5">
 			<h2>コース変更依頼</h2>
-			<!-- , url: students_path -->
-				<%= form_for @student, url: {action: 'create'} do |f| %>
+				<%= form_for @student, url:students_requests_path do |f| %>
 					<p class="h5">現在のコース:</p>
 					<p class="h3"><%= @student.course.name %></p>
 					<p class="h5">変更後のコース:</p>
