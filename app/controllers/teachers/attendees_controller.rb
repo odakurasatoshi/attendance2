@@ -14,7 +14,6 @@ class Teachers::AttendeesController < ApplicationController
   	@attendee.update(attendee_params)
   	redirect_to teachers_attendees_path
   end
-
   private
 
   def attendee_params
