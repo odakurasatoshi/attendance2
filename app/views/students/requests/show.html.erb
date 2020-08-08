@@ -1,14 +1,17 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-5">
-			<h2>コース変更依頼</h2>
+			<% if flash[:notice] %>
+  				<p class="alert alert-success" role="alert"><%= flash[:notice] %></p>
+			<% end %>
+			<h2>コース変更依頼画面</h2>
 				<%= form_for @student, url:students_requests_path, method: :post do |f| %>
 					<p class="h5">現在のコース:</p>
 					<p class="h3"><%= @student.course.name %></p>
-					<p class="h5">変更後のコース:</p>
-					<p class="h3"><%= f.collection_select :course_id, Course.all, :id, :name, :include_blank => "選択して下さい" %></p><br>
+					<p class="h5">翌月からのコース:</p>
+					<p class="h3"><%= f.collection_select :course_id, Course.all, :name, :name, :include_blank => "選択して下さい" %></p><br>
 					<%= f.submit '変更依頼を送信', class: "btn btn-primary"%>
-					<p>※コース変更は翌月1日から適用されます。</p>
+					<p>※コース変更は翌月1日に反映されます。</p>
 				<% end %>
 		</div>
 		<div class="col-xs-5">

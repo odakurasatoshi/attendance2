@@ -8,9 +8,10 @@ class Students::RequestsController < ApplicationController
 
   # コース変更依頼をActionMailerで送信
   def create
-    @student = current_student
-    # course = current_student.course
-    ChangeMailer.send_change.deliver
+    # @student = current_student
+    # @course = params[:student][:course_id]
+    ChangeMailer.send_change(current_student,params[:student][:course_id]).deliver
     redirect_to students_request_path(current_student)
+    flash[:notice] = "変更依頼を送信しました"
   end
 end

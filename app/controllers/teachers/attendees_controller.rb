@@ -10,7 +10,7 @@ class Teachers::AttendeesController < ApplicationController
   end
 
   def update
-    @attendee = Attendee.find_by(student_id: params[:id])
+    @attendee = Attendee.find(params[:id])
     @attendee.update(attendee_params)
     redirect_to teachers_attendees_path
   end
