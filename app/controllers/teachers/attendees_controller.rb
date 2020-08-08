@@ -2,11 +2,11 @@ class Teachers::AttendeesController < ApplicationController
   before_action :authenticate_teacher!
 
   def index
-    @attendees = Attendee.where('created_at>?', 1.day.ago)
+      @attendees = Attendee.where("created_at >= ?", Time.zone.now.beginning_of_day)
   end
 
-  def show
-    @attendee = Attendee.find_by(student_id: params[:id])
+  def edit
+    @attendee = Attendee.find_by(id: params[:id])
   end
 
   def update
