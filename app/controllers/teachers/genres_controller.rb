@@ -1,18 +1,18 @@
 class Teachers::GenresController < ApplicationController
-   before_action :authenticate_teacher!
+  before_action :authenticate_teacher!
 
-   def index
-  	@genre = Genre.new
-  	@genres = Genre.all
-  end
+  def index
+    @genre = Genre.new
+    @genres = Genre.all
+ end
 
   def create
-  	@genre = Genre.new(genre_params)
+    @genre = Genre.new(genre_params)
     @genres = Genre.all
-  	if @genre.save
-  	   redirect_to teachers_genres_path
+    if @genre.save
+      redirect_to teachers_genres_path
     else
-       render :index
+      render :index
     end
   end
 
@@ -23,22 +23,21 @@ class Teachers::GenresController < ApplicationController
   def update
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
-       redirect_to teachers_genres_path
+      redirect_to teachers_genres_path
     else
-       render :edit
+      render :edit
     end
   end
 
   # def destroy
-  	# @genre = Genre.find(params[:id])
-  	# @genre.destroy
-  	# redirect_to teachers_genres_path
+  # @genre = Genre.find(params[:id])
+  # @genre.destroy
+  # redirect_to teachers_genres_path
   # end
 
   private
+
   def genre_params
-  	params.require(:genre).permit(:name)
+    params.require(:genre).permit(:name)
   end
-
 end
-

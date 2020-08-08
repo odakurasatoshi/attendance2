@@ -3,12 +3,12 @@
 class Teachers::SessionsController < Devise::SessionsController
   # ログイン後に遷移するpathを設定
   def after_sign_in_path_for(resource)
-      teachers_lessons_path
+    teachers_lessons_path
   end
 
   # ログアウト後に遷移するpathを設定
   def after_sign_out_path_for(resource)
-      new_teacher_session_path
+    new_teacher_session_path
   end
   # before_action :configure_sign_in_params, only: [:create]
 

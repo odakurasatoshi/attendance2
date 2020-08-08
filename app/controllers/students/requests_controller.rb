@@ -3,7 +3,7 @@ class Students::RequestsController < ApplicationController
 
   # コース変更依頼画面へ遷移
   def show
-  	@student = current_student
+    @student = current_student
   end
 
   # コース変更依頼をActionMailerで送信

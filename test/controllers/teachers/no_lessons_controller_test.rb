@@ -10,5 +10,4 @@ class Teachers::NoLessonsControllerTest < ActionDispatch::IntegrationTest
     get teachers_no_lessons_show_url
     assert_response :success
   end
-
 end

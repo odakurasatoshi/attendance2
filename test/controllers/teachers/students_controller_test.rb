@@ -15,5 +15,4 @@ class Teachers::StudentsControllerTest < ActionDispatch::IntegrationTest
     get teachers_students_edit_url
     assert_response :success
   end
-
 end

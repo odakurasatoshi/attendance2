@@ -5,5 +5,4 @@ class Teachers::GenresControllerTest < ActionDispatch::IntegrationTest
     get teachers_genres_index_url
     assert_response :success
   end
-
 end

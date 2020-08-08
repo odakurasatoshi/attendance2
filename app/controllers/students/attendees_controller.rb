@@ -14,10 +14,10 @@ class Students::AttendeesController < ApplicationController
   end
 
   def create
-  	@attendee = Attendee.new(attendee_params)
-  	@attendee.student_id = current_student.id
-  	@attendee.save
-  	redirect_to students_attendee_path(current_student)
+    @attendee = Attendee.new(attendee_params)
+    @attendee.student_id = current_student.id
+    @attendee.save
+    redirect_to students_attendee_path(current_student)
   end
 
   private

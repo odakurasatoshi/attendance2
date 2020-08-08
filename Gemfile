@@ -64,16 +64,16 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # original
 gem "devise"
 
-#画像投稿用
+# 画像投稿用
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
-#UIデザイン
+# UIデザイン
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
-gem 'kaminari','~> 1.2.1'
+gem 'kaminari', '~> 1.2.1'
 
-#デバック
+# デバック
 gem 'pry-byebug'
 
 # デプロイ
@@ -87,3 +87,5 @@ gem "simple_calendar", "~> 2.0"
 
 # バリデーション日本語化
 gem 'rails-i18n'
+
+gem 'rubocop-airbnb'

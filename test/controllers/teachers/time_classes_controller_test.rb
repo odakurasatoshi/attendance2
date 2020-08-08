@@ -5,5 +5,4 @@ class Teachers::TimeClassesControllerTest < ActionDispatch::IntegrationTest
     get teachers_time_classes_index_url
     assert_response :success
   end
-
 end

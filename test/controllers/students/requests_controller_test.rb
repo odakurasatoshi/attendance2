@@ -5,5 +5,4 @@ class Students::RequestsControllerTest < ActionDispatch::IntegrationTest
     get students_requests_show_url
     assert_response :success
   end
-
 end

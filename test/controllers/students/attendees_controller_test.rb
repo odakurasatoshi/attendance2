@@ -10,5 +10,4 @@ class Students::AttendeesControllerTest < ActionDispatch::IntegrationTest
     get students_attendees_show_url
     assert_response :success
   end
-
 end
