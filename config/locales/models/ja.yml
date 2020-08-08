@@ -1,41 +1,21 @@
 ja:
   activerecord:
     models:
-      area_class: クラス
+      area_class:
     attributes:
       area_class:
         name: クラス名
-
-    models:
-      course: コース
-    attributes:
       course:
         name: コース名
-
-    models:
-      genre: ジャンル
-    attributes:
       genre:
         name: ジャンル名
-
-    models:
-      lesson: レッスン
-    attributes:
       lesson:
         area_class_id: クラス
         genre_id: ジャンル
         teacher_id: 担当
         time_class_id: 時間帯
-
-    models:
-      no_lesson: 休講
-    attributes:
       no_lesson:
         lesson_id: レッスン
-
-    models:
-      student: 生徒
-    attributes:
       student:
         email: メールアドレス
         encrypted_password: パスワード
@@ -46,10 +26,6 @@ ja:
         course_id: コース
         teacher_id: 担当
         is_active: 登録ステータス
-
-    models:
-      teacher: 担当
-    attributes:
       teacher:
         email: メールアドレス
         encrypted_password: パスワード
@@ -58,9 +34,5 @@ ja:
         sub_last_name: セイ
         sub_first_name: メイ
         course_id: コース
-
-    models:
-      time_class: 時間
-    attributes:
       time_class:
         time_zone: 時間帯
