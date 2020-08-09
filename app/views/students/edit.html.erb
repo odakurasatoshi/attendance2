@@ -4,7 +4,7 @@
 			<h2>マイページ編集</h2>
 			<%= form_for @student do |f| %>
 				<% if @student.errors.any? %>
-					<h3 class="message-error"><%= @student.errors.count %> errors prohibited this lesson from being saved:</h3>
+					<h4 class="message-error"><%= @student.errors.count %> 件のエラーのため内容は保存できません。</h4>
 						<ul>
 							<% @student.errors.full_messages.each do |message| %>
 								<li><%= message %></li>

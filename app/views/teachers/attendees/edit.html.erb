@@ -5,7 +5,7 @@
 			<%= @attendee&.attendance_date %>
 			<p><%= @attendee.student&.last_name %><%= @attendee.student&.first_name %></p>
 			<p><%= @attendee.student.course&.name %></p>
-			<td><%= @attendee.student.attendees.count %></td>
+			<td><%= @attendee.student.attendees.where(attendance_status:'承認').count %></td>
 
 			<p><%= f.radio_button :attendance_status, :未承認 %>未承認</p>
 			<p><%= f.radio_button :attendance_status, :承認 %>承認</p>

@@ -3,7 +3,7 @@
 		<h1>時間帯編集</h1>
 			<%= form_for [:teachers,@time_class] do |f| %>
 				<% if @time_class.errors.any? %>
-					<h3 class="message-error"><%= @time_class.errors.count %> errors prohibited this 時間帯 from being saved:</h3>
+					<h4 class="message-error"><%= @time_class.errors.count %>件のエラーのため内容は保存できません。</h4>
 						<ul>
 							<% @time_class.errors.full_messages.each do |message| %>
 								<li><%= message %></li>

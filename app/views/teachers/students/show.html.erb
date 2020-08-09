@@ -22,6 +22,10 @@
 						<th>コース</th>
 						<td><%= @student.course&.name %></td>
 					</tr>
+					<tr>
+						<th>担当</th>
+						<td><%= @student.teacher&.last_name %></td>
+					</tr>
 			</table>
 
 			<%= link_to "編集する",  edit_teachers_student_path(@student.id), class: "btn btn-primary" %>

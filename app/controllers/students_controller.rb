@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = current_student
-    @attendees = @student.attendees
+    @attendees = @student.attendees.where(attendance_status: "承認")
   end
 
   def edit
@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
     @student = current_student
     @attendees = @student.attendees
     if @student.update(student_params)
-      flash[:notice] = "編集内容が保存されました."
+      flash[:success] = "編集内容が保存されました."
       redirect_to student_path
     else
       render :edit

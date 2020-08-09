@@ -1,10 +1,10 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-5">
-			<% if flash[:notice] %>
-  				<p class="alert alert-success" role="alert"><%= flash[:notice] %></p>
-			<% end %>
 			<h2>コース変更依頼画面</h2>
+			<% if flash[:success] %>
+  				<p class="alert alert-success" role="alert"><%= flash[:success] %></p>
+			<% end %>
 				<%= form_for @student, url:students_requests_path, method: :post do |f| %>
 					<p class="h5">現在のコース:</p>
 					<p class="h3"><%= @student.course.name %></p>

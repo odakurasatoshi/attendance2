@@ -28,7 +28,7 @@ class Teachers::LessonsController < ApplicationController
   def update
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-      flash[:notice] = "レッスン情報更新完了"
+      flash[:success] = "レッスン情報更新完了"
       redirect_to teachers_lessons_path
     else
       render :edit

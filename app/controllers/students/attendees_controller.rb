@@ -2,14 +2,10 @@ class Students::AttendeesController < ApplicationController
   before_action :authenticate_student!
 
   def index
-    # @attendees = Attendee.all
-    @attendees = current_student.attendees.all
-    # @student = current_student
-    # @attendees = @student.attendees
+    @attendees = current_student.attendees.where(attendance_status: "承認")
   end
 
   def show
-    @attendees = Attendee.all
     @attendee = current_student.attendees.last
   end
 

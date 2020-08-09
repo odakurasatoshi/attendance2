@@ -19,20 +19,22 @@ ja:
       student:
         email: メールアドレス
         encrypted_password: パスワード
+        password: パスワード
         last_name: 姓
         first_name: 名
         sub_last_name: セイ
         sub_first_name: メイ
         course_id: コース
+        course: コース
         teacher_id: 担当
         is_active: 登録ステータス
       teacher:
         email: メールアドレス
         encrypted_password: パスワード
+        password: パスワード
         last_name: 姓
         first_name: 名
         sub_last_name: セイ
         sub_first_name: メイ
-        course_id: コース
       time_class:
         time_zone: 時間帯

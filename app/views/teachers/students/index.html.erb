@@ -11,7 +11,7 @@
 				<th>氏名</th>
 				<th>メールアドレス</th>
 				<th>選択コース</th>
-				<th>ステータス</th>
+				<!-- <th>ステータス</th> -->
 				<th>担当</th>
 			</thead>
 			<tbody>
@@ -21,7 +21,7 @@
 						<td><%= student&.last_name %><%= student&.first_name %></td>
 						<td><%= student&.email %></td>
 						<td><%= student.course&.name %></td>
-						<td><%#= @students. %></td>
+						<!-- <td><%#= @students. %></td> -->
 						<td><%= student.teacher&.last_name %></td>
 					</tr>
 				<% end %>

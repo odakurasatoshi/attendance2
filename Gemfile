@@ -88,6 +88,8 @@ gem "simple_calendar", "~> 2.0"
 
 # バリデーション日本語化
 gem 'rails-i18n'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 # ロボコップ
 gem 'rubocop-airbnb'

@@ -12,6 +12,6 @@ class Students::RequestsController < ApplicationController
     # @course = params[:student][:course_id]
     ChangeMailer.send_change(current_student,params[:student][:course_id]).deliver
     redirect_to students_request_path(current_student)
-    flash[:notice] = "変更依頼を送信しました"
+    flash[:success] = "変更依頼を送信しました"
   end
 end

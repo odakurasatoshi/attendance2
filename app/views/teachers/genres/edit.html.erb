@@ -3,7 +3,7 @@
 		<h1>ジャンル編集</h1>
 			<%= form_for [:teachers,@genre] do |f| %>
 				<% if @genre.errors.any? %>
-					<h3 class="message-error"><%= @genre.errors.count %> errors prohibited this クラス from being saved:</h3>
+					<h4 class="message-error"><%= @genre.errors.count %> 件のエラーのため内容は保存できません。</h4>
 						<ul>
 							<% @genre.errors.full_messages.each do |message| %>
 								<li><%= message %></li>

@@ -3,7 +3,7 @@
 		<h1>コース編集</h1>
 			<%= form_for [:teachers,@course] do |f| %>
 				<% if @course.errors.any? %>
-					<h3 class="message-error"><%= @course.errors.count %> errors prohibited this コース from being saved:</h3>
+					<h4 class="message-error"><%= @course.errors.count %> 件のエラーのため内容は保存できません。</h4>
 						<ul>
 							<% @course.errors.full_messages.each do |message| %>
 								<li><%= message %></li>

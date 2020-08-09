@@ -29,12 +29,12 @@
 							<th>コース</th>
 							<td><%= f.collection_select :course_id, Course.all, :id, :name, :include_blank => "選択して下さい" %></td>
 						</tr>
-						<tr>
-						<tr>
-							<th>登録ステータス</th>
-							<td><%#= f.radio_button :attendance_status, :有効 %></td>
-						</tr>
-						<tr>
+						<!-- <tr> -->
+						<!-- <tr> -->
+							<!-- <th>登録ステータス</th> -->
+							<!-- <td><%#= f.radio_button :attendance_status, :有効 %></td> -->
+						<!-- </tr> -->
+						<!-- <tr> -->
 							<th>担当</th>
 							<td> <%= f.collection_select :teacher_id, Teacher.all, :id, :last_name, :include_blank => "選択して下さい" %></td>
 						</tr>

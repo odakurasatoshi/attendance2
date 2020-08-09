@@ -49,7 +49,7 @@
                 <div class="col-xs-6">
                   <p class="text-center">ようこそ<%= current_student.last_name %>さん</p>
                   <p class="text-center">現在の選択コース:<%= current_student.course.name %></p>
-                  <p class="text-center">出席数:<%= current_student.attendees.all.count %></p>
+                    <p class="text-center">出席数:<%= current_student.attendees.where(attendance_status:'承認').count %></p>
                 </div>
                     <ul class="nav nav-tabs navbar-right">
                       <%= link_to "レッスン一覧",students_lessons_path %>

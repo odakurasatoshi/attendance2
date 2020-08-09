@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>本日の出席登録者一覧</h1>
+	<h1>出席者一覧</h1>
 	<div class="row">
 		<table class="table table-striped">
 			<thead>
@@ -15,8 +15,7 @@
 							<td><%= attende&.attendance_date %></td>
 							<td><%=link_to attende.student&.last_name, edit_teachers_attendee_path(attende.id) %></td>
 							<td><%= attende.student.course&.name %></td>
-							
-							<td><%= attende.student.attendees.count %></td>
+							<td><%= attende.student.attendees.where(attendance_status:'承認').count %></td>
 							<td><%= attende.attendance_status %></td>
 						</tr>
 				<% end %>
