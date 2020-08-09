@@ -2,10 +2,10 @@
     <div class="row">
 		<h2>出席承認画面</h2>
 		<%= form_for [:teachers, @attendee] do |f| %>
-			<%= @attendee&.attendance_date %>
+			<p><%= @attendee&.attendance_date %></p>
 			<p><%= @attendee.student&.last_name %><%= @attendee.student&.first_name %></p>
 			<p><%= @attendee.student.course&.name %></p>
-			<td><%= @attendee.student.attendees.where(attendance_status:'承認').count %></td>
+			<p><%= @attendee.student.attendees.where(attendance_status:'承認').count %></p>
 
 			<p><%= f.radio_button :attendance_status, :未承認 %>未承認</p>
 			<p><%= f.radio_button :attendance_status, :承認 %>承認</p>

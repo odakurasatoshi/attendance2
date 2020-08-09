@@ -13,7 +13,7 @@
 				<% @attendees.each do |attende| %>
 						<tr>
 							<td><%= attende&.attendance_date %></td>
-							<td><%=link_to attende.student&.last_name, edit_teachers_attendee_path(attende.id) %></td>
+							<td><%=link_to attende.student&.last_name + attende.student&.first_name, edit_teachers_attendee_path(attende.id) %></td>
 							<td><%= attende.student.course&.name %></td>
 							<td><%= attende.student.attendees.where(attendance_status:'承認').count %></td>
 							<td><%= attende.attendance_status %></td>
