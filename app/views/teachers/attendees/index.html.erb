@@ -1,5 +1,9 @@
 <div class="container">
 	<h1>出席者一覧</h1>
+		<%#= form_tag(teachers_search_path,:method => 'get') do %>
+	  			<%#= text_field_tag :search, "",placeholder:"検索ワード" %>
+				<%#= submit_tag '検索', :name => nil %>
+		<%# end %>
 	<div class="row">
 		<table class="table table-striped">
 			<thead>

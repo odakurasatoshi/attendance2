@@ -9,10 +9,10 @@ class Teachers::StudentsController < ApplicationController
     @student = Student.find_by(id: params[:id])
   end
 
-  def search
-    # Viewのformで取得したパラメータをモデルに渡す
-    @students = Student.search(id: params[:search])
-  end
+  # def search
+  # Viewのformで取得したパラメータをモデルに渡す
+  # @students = Student.search(id: params[:search])
+  # end
 
   def edit
     @student = Student.find_by(id: params[:id])

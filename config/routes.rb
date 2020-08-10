@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :attendees, only: [:index, :edit, :update]
     resources :students, only: [:index, :show, :edit, :update]
     resources :no_lessons, only: [:index, :show, :create, :destroy]
-    get 'students/search/' => 'students#search', as: 'students_search'
+    get 'search/' => 'search#search', as: 'search'
   end
   get 'teachers/index'
 

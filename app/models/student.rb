@@ -12,12 +12,4 @@ class Student < ApplicationRecord
   validates :first_name, presence: true
   validates :sub_first_name, presence: true
   validates :email, presence: true
-
-  def self.search(search)
-    if search
-      Student.where(['content LIKE ?', "%#{search}%"])
-    else
-      Student.all
-    end
-  end
 end
