@@ -8,7 +8,7 @@
 				<th>ジャンル</th>
 				<th>時間帯</th>
 				<th>担当</th>
-				<th>コース</th>
+				<!-- <th>コース</th> -->
 			</thead>
 			<tbody>
 				<% @attendees.each do |attende| %>
@@ -18,7 +18,7 @@
 						<td><%= attende.lesson.genre&.name %></td>
 						<td><%= attende.lesson.time_class&.time_zone %></td>
 						<td><%= attende.lesson.teacher&.last_name %></td>
-						<td><%= attende.student.course&.name %></td>
+						<!-- <td><%#= attende.student.course&.name %></td> -->
 					</tr>
 				<% end %>
 			</tbody>

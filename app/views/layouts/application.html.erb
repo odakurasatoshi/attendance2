@@ -15,9 +15,9 @@
         <div class="header-content">
           <div class="container">
             <div class="row">
-              <div class="col-xs-3">
+              <div class="col-xs-4">
                 <%= image_tag 'capo.png', :size => '200x70' %>
-                <h3 class="">出席登録サイト</h3>
+                <h2 class="">出席登録サイト</h2>
               </div>
                <div class="col-xs-4">
                 <p class="text-center">ようこそ<%= current_teacher.last_name %>先生</p>
@@ -44,9 +44,9 @@
             <div class="row">
               <div class="col-xs-4">
                 <%= image_tag 'capo.png', :size => '200x70' %>
-                <h3 class="">出席登録サイト</h3>
+                <h2 class="">出席登録サイト</h2>
               </div>
-                <div class="col-xs-6">
+                <div class="col-xs-4">
                   <p class="text-center">ようこそ<%= current_student.last_name %>さん</p>
                   <p class="text-center">現在の選択コース:<%= current_student.course.name %></p>
                     <p class="text-center">出席数:<%= current_student.attendees.where(attendance_status:'承認').count %></p>
@@ -65,9 +65,11 @@
         <div class="header-content">
           <div class="container">
             <div class="row">
-              <div class="col-xs-3">
+              <div class="col-xs-4">
                 <%= image_tag 'capo.png', :size => '200x70' %>
-                <h3 class="">出席登録サイト</h3>
+                <h2 class="">出席登録サイト</h2>
+              </div>
+              <div class="col-xs-4">
               </div>
                 <ul class="nav nav-tabs navbar-right" style="background-color:#e3f2fd;" >
                   <%= link_to "ログイン（生徒用）", new_student_session_path %>
