@@ -71,17 +71,29 @@
               </div>
               <div class="col-xs-4">
               </div>
-                <ul class="nav nav-tabs navbar-right" style="background-color:#e3f2fd;" >
-                  <%= link_to "ログイン（生徒用）", new_student_session_path %>
-                  <%= link_to "新規登録（生徒用）", new_student_registration_path %>
-                  <%= link_to "ログイン（先生用）", new_teacher_session_path %>
-                  <%= link_to "新規登録（先生用）", new_teacher_registration_path %>
+
+              <div id="sp-menu">
+                <ul>
+                  <li><%= link_to "ログイン（生徒用）", new_student_session_path %></li>
+                  <li><%= link_to "新規登録（生徒用）", new_student_registration_path %></li>
+                  <li><%= link_to "ログイン（先生用）", new_teacher_session_path %></li>
+                  <li><%= link_to "新規登録（先生用）", new_teacher_registration_path %></li>
                 </ul>
+              </div>
+              <div id="hm-icon">
+                <a class="menu-trigger" href="#">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </header>
     <% end %>
     <%= yield %>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
