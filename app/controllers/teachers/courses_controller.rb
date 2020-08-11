@@ -23,6 +23,7 @@ class Teachers::CoursesController < ApplicationController
   def update
     @course = Course.find(params[:id])
     if @course.update(course_params)
+      flash[:success] = "更新完了"
       redirect_to teachers_courses_path
     else
       render :edit

@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<h1>時間帯編集</h1>
+		<h3>時間帯編集</h3>
 			<%= form_for [:teachers,@time_class] do |f| %>
 				<% if @time_class.errors.any? %>
 					<h4 class="message-error"><%= @time_class.errors.count %>件のエラーのため内容は保存できません。</h4>

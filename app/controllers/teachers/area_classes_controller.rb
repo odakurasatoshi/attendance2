@@ -23,6 +23,7 @@ class Teachers::AreaClassesController < ApplicationController
   def update
     @area_class = AreaClass.find(params[:id])
     if @area_class.update(area_class_params)
+      flash[:success] = "更新完了"
       redirect_to teachers_area_classes_path
     else
       render :edit

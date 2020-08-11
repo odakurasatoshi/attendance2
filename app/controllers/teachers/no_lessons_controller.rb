@@ -8,6 +8,7 @@ class Teachers::NoLessonsController < ApplicationController
   def create
     @no_lesson = NoLesson.new(no_lesson_params)
     @no_lesson.save
+    flash[:success] = "休講登録完了しました"
     redirect_to teachers_no_lessons_path
   end
 

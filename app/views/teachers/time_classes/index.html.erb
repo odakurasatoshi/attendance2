@@ -1,6 +1,9 @@
 <div class="container">
 	<div class="row">
-		<h1>レッスン時間一覧・追加</h1>
+		<h3>レッスン時間一覧・追加</h3>
+		<% if flash[:success] %>
+  			<p class="alert alert-success" role="alert"><%= flash[:success] %></p>
+		<% end %>
 			<%= form_for [:teachers,@time_class] do |f| %>
 				<% if @time_class.errors.any? %>
 					<h4 class="message-error"><%= @time_class.errors.count %> 件のエラーのため内容は保存できません。</h4>

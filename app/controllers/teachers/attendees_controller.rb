@@ -13,6 +13,7 @@ class Teachers::AttendeesController < ApplicationController
   def update
     @attendee = Attendee.find(params[:id])
     @attendee.update(attendee_params)
+    flash[:success] = "更新完了"
     redirect_to teachers_attendees_path
   end
 

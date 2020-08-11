@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-			<h1>レッスン新規登録</h1>
+			<h3>レッスン新規登録</h3>
 			<%= form_for [:teachers,@lesson] do |f| %>
 				<% if @lesson.errors.any? %>
 					<h4 class="message-error"><%= @lesson.errors.count %> 件のエラーのため内容は保存できません。</h4>
@@ -11,17 +11,17 @@
 						</ul>
 				<% end %>
 				<div class="col-xs-3">
-					<h3>画像</h3>
+					<h4>画像</h4>
 					<%= f.attachment_field :image %>
 				</div>
 				<div class="col-xs-9">
-					<h3>クラス</h3>
+					<h4>クラス</h4>
 					<%= f.collection_select :area_class_id, AreaClass.all, :id, :name, :include_blank => "選択して下さい" %>
-					<h3>ジャンル</h3>
+					<h4>ジャンル</h4>
 					<%= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "選択して下さい" %>
-					<h3>時間帯</h3>
+					<h4>時間帯</h4>
 					<%= f.collection_select :time_class_id, TimeClass.all, :id, :time_zone, :include_blank => "選択して下さい" %>
-					<h3>担当者</h3>
+					<h4>担当者</h4>
 					<%= f.collection_select :teacher_id, Teacher.all, :id, :last_name, :include_blank => "選択して下さい" %>
 					<%= f.submit '新規登録', class: "btn btn-primary" %>
 				</div>

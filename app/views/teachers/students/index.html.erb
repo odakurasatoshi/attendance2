@@ -1,5 +1,8 @@
 <div class="container">
-	<h1>生徒一覧</h1>
+	<h3>生徒一覧</h3>
+	<% if flash[:success] %>
+  		<p class="alert alert-success" role="alert"><%= flash[:success] %></p>
+	<% end %>
 	<div class="row">
 		<table class="table table-striped">
 			<thead>

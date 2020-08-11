@@ -1,13 +1,31 @@
 <div class="container">
     <div class="row">
-		<h2>出席承認画面</h2>
+		<h3>出席承認画面</h3>
 		<%= form_for [:teachers, @attendee] do |f| %>
-			<p><%= @attendee&.attendance_date %></p>
-			<p><%= @attendee.student&.last_name %><%= @attendee.student&.first_name %></p>
-			<p><%= @attendee.student.course&.name %></p>
-			<p><%= @attendee.student.attendees.where(attendance_status:'承認').count %></p>
+			<table class="table">
+				<tr>
+					<th>出席日</th>
+					<td><%= @attendee&.attendance_date %></td>
+				</tr>
+				<!-- <tr> -->
+					<!-- <th>レッスン</th> -->
+					<!-- <td><%#= @attendee.student.lesson.area_class&.name %></td> -->
+				<!-- </tr> -->
+				<tr>
+					<th>出席者名</th>
+					<td><%= @attendee.student&.last_name %><%= @attendee.student&.first_name %></td>
+				</tr>
+				<tr>
+					<th>現在のコース</th>
+					<td><%= @attendee.student.course&.name %></td>
+				</tr>
+				<tr>
+					<th>出席数</th>
+					<td><%= @attendee.student.attendees.where(attendance_status:'承認').count %></td>
+				</tr>
+			</table>
 
-			<p><%= f.radio_button :attendance_status, :未承認 %>未承認</p>
-			<p><%= f.radio_button :attendance_status, :承認 %>承認</p>
-		    <%= f.submit "登録", class: "btn btn-primary"  %>
+			<p class="h4"><%= f.radio_button :attendance_status, :未承認 %>未承認
+			<%= f.radio_button :attendance_status, :承認 %>承認</p>
+		    <p><%= f.submit "登録", class: "btn btn-primary"  %></p>
     	<% end %>

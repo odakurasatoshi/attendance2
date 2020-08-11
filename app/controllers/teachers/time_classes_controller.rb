@@ -23,6 +23,7 @@ class Teachers::TimeClassesController < ApplicationController
   def update
     @time_class = TimeClass.find(params[:id])
     if @time_class.update(time_class_params)
+      flash[:success] = "更新完了"
       redirect_to teachers_time_classes_path
     else
       render :edit

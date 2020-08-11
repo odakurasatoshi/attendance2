@@ -21,6 +21,7 @@ class Teachers::StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
     @student.update(student_params)
+    flash[:success] = "生徒情報更新完了"
     redirect_to teachers_students_path
   end
 

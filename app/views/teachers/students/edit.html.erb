@@ -1,10 +1,10 @@
 
 <div class="container">
 	<div class="row">
-		<h1>生徒編集画面</h1>
+		<h3>生徒編集画面</h3>
 
 			<%= form_for @student, url:teachers_student_path(@student), method: :patch do |f| %>
-					<table class="">
+					<table class="table">
 						<tr>
 							<th>姓</th>
 							<td><%= @student.last_name %></td>
