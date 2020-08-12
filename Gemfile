@@ -97,3 +97,5 @@ gem 'devise-i18n-views'
 
 # ロボコップ
 gem 'rubocop-airbnb'
+# バッチ処理時のcrontab管理
+gem 'whenever', require: false
