@@ -7,7 +7,7 @@
 			<% end %>
 				<%= form_for @student, url:students_requests_path, method: :post do |f| %>
 					<p class="h5">現在のコース:</p>
-					<p class="h3"><%= @student.course.name %></p>
+					<p class="h3"><%= @student.course&.name %></p>
 					<p class="h5">翌月からのコース:</p>
 					<p class="h3"><%= f.collection_select :course_id, Course.all, :name, :name, :include_blank => "選択して下さい" %></p><br>
 					<%= f.submit '変更依頼を送信', class: "btn btn-primary"%>

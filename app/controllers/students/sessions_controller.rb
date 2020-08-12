@@ -11,6 +11,14 @@ class Students::SessionsController < Devise::SessionsController
     new_student_session_path
   end
 
+  # ゲストユーザー(生徒)ログイン
+  def new_guest
+    student = Student.guest
+    sign_in student
+    flash[:notice] = "ゲストユーザー(生徒)としてログインしました。"
+    redirect_to root_path
+  end
+
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in

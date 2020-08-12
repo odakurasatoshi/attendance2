@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     registrations: 'teachers/registrations',
   }
 
+  devise_scope :teacher do
+    post 'teachers/guest_sign_in', to: 'teachers/sessions#new_guest'
+  end
+
   namespace :teachers do
     resources :lessons, only: [:index, :new, :show, :edit, :create, :update]
     resources :area_classes, only: [:index, :create, :edit, :update, :destroy]
@@ -24,6 +28,10 @@ Rails.application.routes.draw do
     passwords: 'students/passwords',
     registrations: 'students/registrations',
   }
+
+  devise_scope :student do
+    post 'students/guest_sign_in', to: 'students/sessions#new_guest'
+  end
 
   namespace :students do
     resources :lessons, only: [:index, :show]
