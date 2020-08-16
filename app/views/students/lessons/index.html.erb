@@ -25,7 +25,7 @@
 							<td><%= lesson.genre&.name %></td>
 							<td><%= lesson.time_class&.time_zone %></td>
 							<td><%= lesson.teacher&.last_name %></td>
-							<td><%= link_to "選択する", students_lesson_path(lesson.id) %></td>
+							<td><%= link_to "選択", students_lesson_path(lesson.id), class: "btn btn-primary" %></td>
 						</tr>
 					<% end %>
 				</tbody>

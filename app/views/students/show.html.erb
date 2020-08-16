@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-5">
-			<h1>生徒マイページ</h1>
+			<h3>生徒マイページ</h3>
 				<% if flash[:success] %>
 		  			<p class="alert alert-success" role="alert"><%= flash[:success] %></p>
 				<% end %>
@@ -24,7 +24,7 @@
 					</tr>
 				</table>
 
-				<%= link_to "編集する",  edit_student_path(@student.id), class: "btn btn-primary" %>
+				<%= link_to "編集",  edit_student_path(@student.id), class: "btn btn-primary" %>
 				<%= link_to "出席履歴一覧", students_attendees_path, class: "btn btn-primary" %>
 				<%= link_to "コース変更依頼", students_request_path(@student.id), class: "btn btn-danger" %>
 		</div>
