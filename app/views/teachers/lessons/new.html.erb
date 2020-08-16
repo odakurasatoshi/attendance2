@@ -22,8 +22,10 @@
 					<h4>時間帯</h4>
 					<%= f.collection_select :time_class_id, TimeClass.all, :id, :time_zone, :include_blank => "選択して下さい" %>
 					<h4>担当者</h4>
-					<%= f.collection_select :teacher_id, Teacher.all, :id, :last_name, :include_blank => "選択して下さい" %>
+					<p><%= f.collection_select :teacher_id, Teacher.all, :id, :last_name, :include_blank => "選択して下さい" %></p>
 					<%= f.submit '新規登録', class: "btn btn-primary" %>
+					<%= link_to "戻る", teachers_lessons_path, class: "btn btn-primary" %>
+
 				</div>
 			<% end %>
 	</div>

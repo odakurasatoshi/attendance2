@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<h3>時間帯編集</h3>
+		<h3>時間編集</h3>
 			<%= form_for [:teachers,@time_class] do |f| %>
 				<% if @time_class.errors.any? %>
 					<h4 class="message-error"><%= @time_class.errors.count %>件のエラーのため内容は保存できません。</h4>
@@ -13,6 +13,7 @@
 				<%= f.label :クラス %>
 				<%= f.text_field :time_zone %>
 				<%= f.submit '変更を保存する', class: "btn btn-primary"%>
+				<%= link_to "戻る", teachers_time_classes_path, class: "btn btn-primary" %>
 			<% end %>
 	</div>
 </div>

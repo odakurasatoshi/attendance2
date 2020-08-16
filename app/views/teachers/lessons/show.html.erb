@@ -21,8 +21,9 @@
 		</table>
 		<%= form_for @no_lesson, url: teachers_no_lessons_path do |f| %>
 			<%= f.hidden_field :lesson_id, value: @lesson.id %>
-			<%= f.date_select :no_lesson_date, :use_month_numbers => true %>
+			<p><%= f.date_select :no_lesson_date, :use_month_numbers => true %></p>
 		    <%= f.submit "休講登録", class: "btn btn-primary"  %>
+		    <%= link_to "戻る", teachers_lessons_path, class: "btn btn-primary" %>
     	<% end %>
 	</div>
 </div>
