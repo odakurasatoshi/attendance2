@@ -40,6 +40,7 @@
 						</tr>
 					</table>
 					<%= f.submit '変更を保存する', class: "btn btn-primary" %>
+					<%= link_to "戻る", teachers_student_path(@student.id), class: "btn btn-primary" %>
 			<% end %>
 	</div>
 </div>
