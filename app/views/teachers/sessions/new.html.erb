@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
       <h3>ログイン（先生）</h3>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,11 +21,12 @@
         <% end %>
 
         <div class="actions">
-          <%= f.submit "ログイン", class: "btn btn-primary" %>
+          <%= f.submit "ログイン", class: "btn btn-primary btn-block" %>
         </div>
       <% end %>
 
       <%= render "teachers/shared/links" %>
+    </div>
   </div>
 </div>
 

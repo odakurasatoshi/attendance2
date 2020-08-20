@@ -7,10 +7,10 @@
 					<th>出席日</th>
 					<td><%= @attendee&.attendance_date %></td>
 				</tr>
-				<!-- <tr> -->
-					<!-- <th>レッスン</th> -->
-					<!-- <td><%#= @attendee.student.lesson.area_class&.name %></td> -->
-				<!-- </tr> -->
+				<tr>
+					<th>レッスン</th>
+					<td><%= @attendee.lesson.area_class&.name %></td>
+				</tr>
 				<tr>
 					<th>出席者名</th>
 					<td><%= @attendee.student&.last_name %><%= @attendee.student&.first_name %></td>
