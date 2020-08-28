@@ -1,0 +1,20 @@
+<% @attendees.each do |attende| %>
+	<tr>
+		<td><%= attende&.attendance_date %></td>
+		<td><%= attende.lesson.area_class&.name %></td>
+		<td><%=link_to attende.student&.last_name + attende.student&.first_name, edit_teachers_attendee_path(attende.id) %></td>
+		<td><%= attende.student.course&.name %></td>
+		<td><%= attende.student.attendees.where(attendance_date: Time.now.prev_month.beginning_of_month..Time.now.prev_month.end_of_month).count %></td>
+		<td><%= attende.student.attendees.where(attendance_status:'承認').count %></td>
+		<td><%= attende.attendance_status %></td>
+
+		<%= link_to teachers_attendees_path, method: :post, remote: true do %>
+			<td><input type="radio" name="status" value="未承認" >未承認</td>
+			<td><input type="radio" name="status" value="承認" >承認</td>
+		<% end %>
+		<%#= form_with model: @attendee, remote: true do |f| %>
+		  <!-- <td><%#= f.radio_button :attendance_status, :未承認 %>未承認 -->
+		  <!-- <%#= f.radio_button :attendance_status, :承認 %>承認</td> -->
+		<%# end %>
+	</tr>
+<% end %>

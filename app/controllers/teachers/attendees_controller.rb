@@ -1,6 +1,11 @@
 class Teachers::AttendeesController < ApplicationController
   before_action :authenticate_teacher!
 
+  def create
+    @attendee = Attendee.find_by(id: params[:id])
+    @attendee.save
+  end
+
   def index
     @attendees = Attendee.all.order(created_at: :desc).search(params[:search])
     # @attendees = Attendee.where("created_at >= ?", Time.zone.now.beginning_of_day)
