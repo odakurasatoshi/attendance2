@@ -12,8 +12,14 @@ class Students::AttendeesController < ApplicationController
   def create
     @attendee = Attendee.new(attendee_params)
     @attendee.student_id = current_student.id
+    # if
+      # @attendee.attendance_date == @attendee.attendance_date && @attendee.lesson_id == @attendee.lesson_id
+      # flash[:danger] = "承認待ちです"
+      # redirect_to students_lesson_path(lesson.id)
+    # else
     @attendee.save
     redirect_to students_attendee_path(current_student)
+    # end
   end
 
   private
