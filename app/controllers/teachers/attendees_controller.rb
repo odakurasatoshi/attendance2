@@ -7,6 +7,7 @@ class Teachers::AttendeesController < ApplicationController
   end
 
   def index
+    @attendee = Attendee.find_by(id: params[:id])
     @attendees = Attendee.all.order(created_at: :desc).search(params[:search])
     # @attendees = Attendee.where("created_at >= ?", Time.zone.now.beginning_of_day)
   end

@@ -19,7 +19,9 @@
 				<th>出席ステータス</th>
 			</thead>
 			<tbody>
+			<tr class="book_<%= @attendee %>">
 				<%= render '/teachers/attendees/attendee', attendee: @attendees %>
+			</tr>
 			</tbody>
 		</table>
 	</div>
