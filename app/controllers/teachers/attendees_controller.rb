@@ -1,10 +1,10 @@
 class Teachers::AttendeesController < ApplicationController
   before_action :authenticate_teacher!
 
-  def create
-    @attendee = Attendee.find_by(id: params[:id])
-    @attendee.save
-  end
+  # def create
+    # @attendee = Attendee.find_by(id: params[:id])
+    # @attendee.save
+  # end
 
   def index
     @attendee = Attendee.find_by(id: params[:id])

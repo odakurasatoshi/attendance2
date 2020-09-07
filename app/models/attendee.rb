@@ -4,10 +4,6 @@ class Attendee < ApplicationRecord
 
   enum attendance_status: { 未承認: 0, 承認: 1 }
 
-  def favorited_by?(teacher)
-    favorites.where(teacher_id: teacher.id).exists?
-  end
-
   def start_time
     attendance_date
   end
