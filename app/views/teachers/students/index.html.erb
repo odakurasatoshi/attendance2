@@ -10,6 +10,8 @@
 				<th>氏名</th>
 				<th>メールアドレス</th>
 				<th>選択コース</th>
+				<th>出席回数(今月)</th>
+				<th>出席回数(先月)</th>
 				<!-- <th>ステータス</th> -->
 				<th>担当</th>
 			</thead>
@@ -20,6 +22,8 @@
 						<td><%= student&.last_name %><%= student&.first_name %></td>
 						<td><%= student&.email %></td>
 						<td><%= student.course&.name %></td>
+						<td><%= student.attendees.where(attendance_date: Time.now.beginning_of_month..Time.now.end_of_month, attendance_status:'承認').count %></td>
+						<td><%= student.attendees.where(attendance_date: Time.now.prev_month.beginning_of_month..Time.now.prev_month.end_of_month, attendance_status:'承認').count %></td>
 						<!-- <td><%#= @students. %></td> -->
 						<td><%= student.teacher&.last_name %></td>
 					</tr>

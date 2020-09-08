@@ -14,8 +14,8 @@
 				<th>レッスン</th>
 				<th>出席者名</th>
 				<th>選択コース</th>
-				<th>先月の出席回数</th>
 				<th>今月の出席回数</th>
+				<th>先月の出席回数</th>
 				<th>出席ステータス</th>
 			</thead>
 			<tbody>
@@ -25,18 +25,12 @@
 							<td><%= attende.lesson.area_class&.name %></td>
 							<td><%=link_to attende.student&.last_name + attende.student&.first_name, edit_teachers_attendee_path(attende.id) %></td>
 							<td><%= attende.student.course&.name %></td>
-							<td><%= attende.student.attendees.where(attendance_date: Time.now.prev_month.beginning_of_month..Time.now.prev_month.end_of_month).count %></td>
-							<td><%= attende.student.attendees.where(attendance_status:'承認').count %></td>
+							<td><%= attende.student.attendees.where(attendance_date: Time.now.beginning_of_month..Time.now.end_of_month, attendance_status:'承認').count %></td>
+							<td><%= attende.student.attendees.where(attendance_date: Time.now.prev_month.beginning_of_month..Time.now.prev_month.end_of_month, attendance_status:'承認').count %></td>
 							<td><%= attende.attendance_status %></td>
-						<%= form_for [:teachers, @attendee] do |f| %>
-						  	<td><%= f.radio_button :attendance_status, :未承認 %>未承認
-							  <%= f.radio_button :attendance_status, :承認 %>承認
-							  <%= f.submit "登録", class: "btn btn-primary"  %>
-							 </td>
-						<% end %>
+						
 					</tr>
 				<% end %>
-				<%#= render '/teachers/attendees/attendee', attendee: @attendees %>
 			</tbody>
 		</table>
 	</div>

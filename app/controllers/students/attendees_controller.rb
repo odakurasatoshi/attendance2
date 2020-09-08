@@ -2,7 +2,7 @@ class Students::AttendeesController < ApplicationController
   before_action :authenticate_student!
 
   def index
-    @attendees = current_student.attendees.where(attendance_status: "承認")
+    @attendees = current_student.attendees.where(attendance_date: Time.now.beginning_of_year..Time.now.end_of_year, attendance_status:'承認')
   end
 
   def show

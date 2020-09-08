@@ -20,8 +20,8 @@
 					<td><%= @attendee.student.course&.name %></td>
 				</tr>
 				<tr>
-					<th>出席数</th>
-					<td><%= @attendee.student.attendees.where(attendance_status:'承認').count %></td>
+					<th>今月の出席数</th>
+					<td><%= @attendee.student.attendees.where(attendance_date: Time.now.beginning_of_month..Time.now.end_of_month, attendance_status:'承認').count %></td>
 				</tr>
 			</table>
 
