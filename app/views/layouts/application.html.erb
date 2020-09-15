@@ -17,7 +17,7 @@
             <div class="row">
               <div class="col-xs-4">
                 <%= image_tag 'capo.png', :size => '200x70' %>
-                <h4 class="">出席登録アプリ</h4>
+                <h4 class="">出席登録サイト</h4>
               </div>
                <div class="col-xs-4">
                 <p class="text-center">ようこそ<%= current_teacher.last_name %><%= current_teacher.first_name %>先生</p>
@@ -62,6 +62,7 @@
                   <p class="text-center">ようこそ<%= current_student.last_name %><%= current_student.first_name %>さん</p>
                   <p class="text-center">現在の選択コース:<%= current_student.course&.name %></p>
                     <p class="text-center">今月の出席数:<%= current_student.attendees.where(attendance_date: Time.now.beginning_of_month..Time.now.end_of_month, attendance_status:'承認').count %></p>
+                    <p class="text-count">※先生による出席承認後に回数は更新されます</p>
                 </div>
                 <div id="sp-menu">
                   <ul class="">
