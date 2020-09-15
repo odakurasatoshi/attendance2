@@ -1,10 +1,10 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-set :application, "attendance"
-set :repo_url, "git@github.com:odakurasatoshi/attendance.git"
+set :application, "attendance2"
+set :repo_url, "git@github.com:odakurasatoshi/attendance2.git"
 
-set :deploy_to, "/home/ec2-user/attendance"
+set :deploy_to, "/home/ec2-user/attendance2"
 set :rbenv_ruby, '2.5.7'
 set :linked_files, %w{config/master.key .env}
 append :linked_dirs, "log", "public/system", "tmp"
