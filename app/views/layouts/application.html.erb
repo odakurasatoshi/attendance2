@@ -17,7 +17,7 @@
             <div class="row">
               <div class="col-xs-4">
                 <%= image_tag 'capo.png', :size => '200x70' %>
-                <h4 class="">出席登録アプリ</h4>
+                <h4 class="">出席登録サイト</h4>
               </div>
                <div class="col-xs-4">
                 <p class="text-center">ようこそ<%= current_teacher.last_name %><%= current_teacher.first_name %>先生</p>
@@ -56,7 +56,7 @@
             <div class="row">
               <div class="col-xs-4">
                 <%= image_tag 'capo.png', :size => '200x70' %>
-                <h4 class="">出席登録アプリ</h4>
+                <h4 class="">出席登録サイト</h4>
               </div>
                 <div class="col-xs-4">
                   <p class="text-center">ようこそ<%= current_student.last_name %><%= current_student.first_name %>さん</p>
@@ -92,7 +92,7 @@
             <div class="row">
               <div class="col-xs-4">
                 <%= image_tag 'capo.png', :size => '200x70' %>
-                <h4 class="">出席登録アプリ</h4>
+                <h4 class="">出席登録サイト</h4>
               </div>
               <div class="col-xs-4">
               </div>
@@ -102,9 +102,9 @@
                   <li><%= link_to "ログイン（生徒用）", new_student_session_path %></li>
                   <li><%= link_to "新規登録（生徒用）", new_student_registration_path %></li>
                   <li><%= link_to "ログイン（先生用）", new_teacher_session_path %></li>
-                  <li><%= link_to "新規登録（先生用）", new_teacher_registration_path %></li>
-                  <li><%= link_to 'ゲストログイン（生徒用）', students_guest_sign_in_path, method: :post %></li>
-                  <li><%= link_to 'ゲストログイン（先生用）', teachers_guest_sign_in_path, method: :post %></li>
+                  <!-- <li><%#= link_to "新規登録（先生用）", new_teacher_registration_path %></li> -->
+                  <!-- <li><%#= link_to 'ゲストログイン（生徒用）', students_guest_sign_in_path, method: :post %></li> -->
+                  <!-- <li><%#= link_to 'ゲストログイン（先生用）', teachers_guest_sign_in_path, method: :post %></li> -->
                 </ul>
               </div>
               <div id="hm-icon">
